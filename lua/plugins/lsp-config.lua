@@ -12,6 +12,12 @@ return {
       lspconfig.lua_ls.setup({
         capabilities = capabilities,
       })
+      lspconfig.cssls.setup({
+        capabilities = capabilities,
+      })
+      lspconfig.html.setup({
+        capabilities = capabilities,
+      })
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
