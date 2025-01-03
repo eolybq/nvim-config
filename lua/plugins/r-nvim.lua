@@ -3,6 +3,10 @@ return {
     "R-nvim/R.nvim",
     config = function()
       local opts = {
+        external_term = "tmux split-window -h -l 30 -d",
+        silent_term = true,
+        auto_quit = true,
+        auto_start = "on startup",
         hook = {
           on_filetype = function()
             vim.api.nvim_buf_set_keymap(0, "n", "<Enter>", "<Plug>RDSendLine", {})
@@ -27,13 +31,6 @@ return {
           "RSaveClose",
         },
       }
-      -- Check if the environment variable "R_AUTO_START" exists.
-      -- If using fish shell, you could put in your config.fish:
-      -- alias r "R_AUTO_START=true nvim"
-      if vim.env.R_AUTO_START == "true" then
-        opts.auto_start = "on startup"
-        opts.objbr_auto_start = true
-      end
       require("r").setup(opts)
     end,
   },
