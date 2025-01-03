@@ -1,10 +1,6 @@
 return {
   {
     "R-nvim/R.nvim",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-      "nvim-lua/plenary.nvim",
-    },
     config = function()
       local opts = {
         hook = {
