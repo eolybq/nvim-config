@@ -17,5 +17,6 @@ vim.opt.relativenumber = true
 vim.o.cursorline = true
 vim.o.termguicolors = true
 
+
 require("vim-options")
 require("lazy").setup("plugins")
